@@ -57,7 +57,7 @@ export default function Header() {
                 </Button>
             </header>
 
-            <Modal id={'new-group-modal'} title={'Create Group'} modalOpen={modalOpen} setModalOpen={setModalOpen}>
+            <Modal title={'Create Group'} modalOpen={modalOpen} handleClose={setModalOpen}>
                 <form onSubmit={onSubmit}>
                     <TextField 
                         id="title" 

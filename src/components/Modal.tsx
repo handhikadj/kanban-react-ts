@@ -4,26 +4,24 @@ import Transition from './Transition';
 import CloseModal from '@/assets/icons/close-modal.svg';
 
 interface ModalProps extends PropsWithChildren {
-    id: string;
     title: string|JSX.Element;
     scrollable?: boolean;
     modalOpen: boolean;
-    setModalOpen: (open: boolean) => void;
+    handleClose: (open: boolean) => void;
 }
 
 export default function Modal({
     children,
-    id,
     title,
     scrollable = false,
     modalOpen,
-    setModalOpen,
+    handleClose,
     ...rest
 }: ModalProps & HTMLAttributes<HTMLElement>) {
 
     const modalContent = useRef<HTMLDivElement>(null);
 
-    useClickAway(modalContent, () => setModalOpen(false))
+    useClickAway(modalContent, () => handleClose(false))
 
     useEffect(() => {
         if (!scrollable && modalOpen) {
@@ -51,7 +49,6 @@ export default function Modal({
             />
 
             <Transition
-                id={id}
                 className="fixed inset-0 z-50 overflow-hidden flex items-center my-4 justify-center px-4 sm:px-6"
                 role="dialog"
                 aria-modal="true"
@@ -63,11 +60,11 @@ export default function Modal({
                 leaveStart="opacity-100 translate-y-0"
                 leaveEnd="opacity-0 translate-y-4"
             >
-                <div ref={modalContent} className={`bg-white rounded-[.70rem] shadow-md overflow-auto w-[26rem] p-6 ${rest?.className ?? ''}`}>
+                <div ref={modalContent} {...rest} className={`bg-white rounded-[.70rem] shadow-md overflow-auto w-[26rem] p-6 ${rest?.className ?? ''}`}>
                     <div className="flex justify-between items-center mb-6">
                         <div className="font-bold text-black text-lg">{title}</div>
 
-                        <button onClick={(e) => { e.stopPropagation(); setModalOpen(false); }}>
+                        <button onClick={(e) => { e.stopPropagation(); handleClose(false); }}>
                             <div className="sr-only">Close</div>
                             <img src={CloseModal} />
                         </button>

@@ -204,10 +204,9 @@ export default function CardItem({ text, progressValue, todoItem, ...rest }: Car
             </div>
 
             <Modal
-                id="edit-task-modal"
                 title="Edit Task"
                 modalOpen={modalEditOpen} 
-                setModalOpen={setModalEditOpen}
+                handleClose={setModalEditOpen}
             >
                 <form onSubmit={onSubmit}>
                     <TextField 
@@ -259,10 +258,9 @@ export default function CardItem({ text, progressValue, todoItem, ...rest }: Car
             </Modal>
 
             <Modal 
-                id={'delete-task-modal'} 
                 title={<DeleteTaskTitle /> as any} 
                 modalOpen={modalDeleteOpen} 
-                setModalOpen={setModalDeleteOpen}
+                handleClose={setModalDeleteOpen}
             >
                 <p className="text-sm whitespace-normal text-[#404040]">
                     Are you sure want to delete this task? your action can't be reverted.

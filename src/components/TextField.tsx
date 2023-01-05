@@ -1,7 +1,7 @@
 import { HTMLAttributes } from 'react';
 
 interface TextFieldProps {
-    id: string;
+    id?: string;
     label: string;
     name: string;
     placeholder?: string;

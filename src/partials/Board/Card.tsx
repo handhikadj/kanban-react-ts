@@ -109,7 +109,7 @@ export default function Card({ id, title, description }: CardProps) {
                 }
             </div>
 
-            <Modal id={'new-task-modal'} title={'Create Task'} modalOpen={modalOpen} setModalOpen={setModalOpen}>
+            <Modal title={'Create Task'} modalOpen={modalOpen} handleClose={setModalOpen}>
                 <form onSubmit={onSubmit}>
                     <TextField 
                         id="task-name"
