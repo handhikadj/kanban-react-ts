@@ -1,6 +1,7 @@
 import { getTodos } from '@/api/services/todos';
 import Spinner from '@/components/Spinner';
 import { useQuery } from '@tanstack/react-query';
+import Card from './Card';
 
 export default function Board() {
     const { isLoading, data } = useQuery({
@@ -27,7 +28,7 @@ export default function Board() {
 
     return (
         <div className="flex-1 mt-[6.15rem] pb-6 px-6 flex gap-4 overflow-auto whitespace-nowrap">
-            cards map
+            {data.map(todo => <Card key={todo.id} id={todo.id} title={todo.title} description={todo.description} />)}
         </div>
     )
 }
