@@ -2,7 +2,7 @@ import { Route, Routes, Navigate } from 'react-router-dom'
 import { lazy } from 'react'
 
 const NotFound = lazy(() => import('@/pages/NotFound'))
-const Index = lazy(() => import('./pages/v1/Index'))
+const Index = lazy(() => import('@/pages/v1/Index'))
 
 export default function App() {
     return (
