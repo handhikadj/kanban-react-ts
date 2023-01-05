@@ -1,9 +1,15 @@
-function App() {
+import { Route, Routes, Navigate } from 'react-router-dom'
+import { lazy } from 'react'
+const Index = lazy(() => import('@/pages/V1/Index'))
+
+export default function App() {
     return (
-        <div className="App">
-            <App />
-        </div>
+        <Routes>
+            <Route 
+                path="/" 
+                element={<Navigate to="/v1" replace />} 
+            />
+            <Route path="/v1" element={<Index />} />
+        </Routes>
     )
 }
-
-export default App
