@@ -1,0 +1,31 @@
+.menu-primary {
+    @apply border border-[#4DB5BC] bg-[#F7FEFF];
+}
+
+.menu-secondary {
+    @apply border border-[#FEEABC] bg-[#FFFCF5];
+}
+
+.menu-danger {
+    @apply border border-[#F5B1B7] bg-[#FFFAFA];
+}
+
+.menu-success {
+    @apply border border-[#B8DBCA] bg-[#F8FBF9];
+}
+
+.text-primary {
+    color: #01959F;
+}
+
+.text-secondary {
+    color: #FA9810;
+}
+
+.text-danger {
+    color: #E11428;
+}
+
+.text-success {
+    color: #43936C;
+}

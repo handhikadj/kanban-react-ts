@@ -1,0 +1,8 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;500;600;700&display=fallback');
+
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+
+@import './ui-utilities.css';
+
+@import 'tailwindcss/utilities';
